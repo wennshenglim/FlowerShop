@@ -18,6 +18,7 @@ public class DSA {
 
     static Scanner input = new Scanner(System.in);
     static List<Order> OrderList = new ArrayList<Order>();
+    static List<Order> DeliveryList = new ArrayList<Order>();
     static DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");  
     static Date localDate = new Date();
     static String lDate = dateFormat.format(localDate); 
@@ -28,24 +29,41 @@ public class DSA {
         Date myDate = parseDate("2018-11-12");
         PastOrder = new Order("P001","dasdasd",myDate,"14：30","Unpick");
         OrderList.add(PastOrder);
-        PastOrder = new Order("P001","dasdasd",myDate,"15：30","Unpick");
+        PastOrder = new Order("P002","dasdasd",myDate,"15：30","Unpick");
         OrderList.add(PastOrder);
-        PastOrder = new Order("P001","dasdasd",myDate,"16：30","Unpick");
+        PastOrder = new Order("P003","dasdasd",myDate,"16：30","Unpick");
         OrderList.add(PastOrder);
         Date myDate1 = parseDate("2018-11-13");
-        PastOrder = new Order("P002","dasdasd",myDate1,"15：30","Unpick");
+        PastOrder = new Order("P004","dasdasd",myDate1,"15：30","Unpick");
         OrderList.add(PastOrder);
-        PastOrder = new Order("P003","dasdasd",myDate1,"16：30","Unpick");
+        PastOrder = new Order("P005","dasdasd",myDate1,"16：30","Unpick");
         OrderList.add(PastOrder);
-        PastOrder = new Order("P004","dasdasd",myDate1,"17：30","Unpick");
+        PastOrder = new Order("P006","dasdasd",myDate1,"17：30","Unpick");
         OrderList.add(PastOrder);
-        PastOrder = new Order("P005","dasdasd",myDate1,"18：30","Unpick");
+        PastOrder = new Order("P007","dasdasd",myDate1,"18：30","Unpick");
         OrderList.add(PastOrder);
         Date myDate2 = parseDate("2018-11-14");
-        PastOrder = new Order("P005","dasdasd",myDate2,"11：30","Unpick");
+        PastOrder = new Order("P008","dasdasd",myDate2,"11：30","Unpick");
         OrderList.add(PastOrder);
-        PastOrder = new Order("P006","dasdasd",myDate2,"12：30","Unpick");
+        PastOrder = new Order("P009","dasdasd",myDate2,"12：30","Unpick");
         OrderList.add(PastOrder);
+        
+        PastOrder = new Order("D001","dasdasd",myDate,"15：30","Undelivered");
+        DeliveryList.add(PastOrder);
+        PastOrder = new Order("D002","dasdasd",myDate,"16：30","Undelivered");
+        DeliveryList.add(PastOrder);
+        PastOrder = new Order("D003","dasdasd",myDate,"17：30","Undelivered");
+        DeliveryList.add(PastOrder);
+        PastOrder = new Order("D004","dasdasd",myDate,"18：30","Undelivered");
+        DeliveryList.add(PastOrder);
+        PastOrder = new Order("D005","dasdasd",myDate1,"15：30","Undelivered");
+        DeliveryList.add(PastOrder);
+        PastOrder = new Order("D006","dasdasd",myDate1,"16：30","Undelivered");
+        DeliveryList.add(PastOrder);
+        PastOrder = new Order("D007","dasdasd",myDate1,"17：30","Undelivered");
+        DeliveryList.add(PastOrder);
+        PastOrder = new Order("D008","dasdasd",myDate1,"18：30","Undelivered");
+        DeliveryList.add(PastOrder);
         
         FlowerShopMenu();
         
@@ -137,11 +155,11 @@ public class DSA {
     }
 
     private static void OrderDelivery() {
-       System.out.println("=====----- Welcome to Order Pickup Menu -----=====");
+       System.out.println("=====----- Welcome to Order Delivery Menu -----=====");
         System.out.println();
         int selection;
         do {
-            System.out.println("Order Pickup Menu:");
+            System.out.println("Order Delivery Menu:");
             System.out.println("1 - View Order for Delivery");
             System.out.println("0 - Return to Main Menu");
             selection = manageSelectionError();
@@ -166,11 +184,41 @@ public class DSA {
 
     private static void ViewOrderDelivery() {
 
+        List d = getOrderDeliveryByDate(lDate);
+        
+        System.out.println();
+        System.out.println("--------|All Order that ready for pick up|--------");
+        System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
+        System.out.println("Order ID\tDetails\t\tCollect Time\tOrder Status");
+        System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
+        if (d.isEmpty()) {
+            System.out.println("@@@@@@@@@@@        No record        @@@@@@@@@@@");
+        } else {
+            for(int i = 0;i < d.size();i++){
+                System.out.println(d.get(i));
+            }
+        }
+        System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
+        System.out.println();
     }
 
     private static void ViewOrderPickup() {
         List p = getOrderByDate(lDate);
-        System.out.println(p);
+        
+        System.out.println();
+        System.out.println("--------|All Order that ready for pick up|--------");
+        System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
+        System.out.println("Order ID\tDetails\t\tCollect Time\tOrder Status");
+        System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
+        if (p.isEmpty()) {
+            System.out.println("@@@@@@@@@@@                                       No record                                       @@@@@@@@@@@");
+        } else { 
+            for(int i = 0;i < p.size();i++){
+                System.out.println(p.get(i));
+            }
+        }
+        System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
+        System.out.println();
     }
     
     public static Date parseDate(String date) {
@@ -208,6 +256,24 @@ public class DSA {
             }
         }
         return OrderPList;
+    }
+    
+    public static List getOrderDeliveryByDate(String lDate){
+        Order o;  
+        List<Order> OrderDList = new ArrayList<Order>();        
+        
+        for(int i = 0;i < DeliveryList.size();i++){
+            o = (Order)DeliveryList.get(i);
+            Date OrderDate = ((Order)DeliveryList.get(i)).getOrderDate();
+            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");  
+            String strDate = dateFormat.format(OrderDate); 
+            if(strDate.equals(lDate)){
+                OrderDList.add(o);
+            }
+            else{
+            }
+        }
+        return OrderDList;
     }
     
     public static int manageSelectionError() {

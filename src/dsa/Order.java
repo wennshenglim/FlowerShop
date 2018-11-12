@@ -69,7 +69,7 @@ public class Order {
 
     @Override
     public String toString() {
-        return "Order{" + "Orderid=" + Orderid + ", OrderDesc=" + OrderDesc + ", OrderDate=" + OrderDate + ", OrderTime=" + OrderTime + ", status=" + status + '}';
+        return Orderid + "\t\t" + OrderDesc + "\t\t" + OrderTime + "\t\t" + status;
     }
 
 }
