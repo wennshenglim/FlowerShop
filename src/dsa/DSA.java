@@ -198,6 +198,8 @@ public class DSA {
         
         for(int i = 0;i < OrderList.size();i++){
             o = (Order)OrderList.get(i);
+            
+            
             Date OrderDate = ((Order)OrderList.get(i)).getOrderDate();
             DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");  
             String strDate = dateFormat.format(OrderDate); 
