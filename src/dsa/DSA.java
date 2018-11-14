@@ -155,7 +155,7 @@ public class DSA {
         
     }
         private static void CorporateCustomerOrder(){
-       String selection1 = "yes";
+       
        String selection2;
         int selection;
         
@@ -188,7 +188,7 @@ public class DSA {
             }*/
        System.out.println("Do you still want to order other items?(yes or no)");
        selection2 = input.nextLine();
-      if(selection2.equals(selection1))
+      if(selection2.equals("yes"))
       {
           CorporateCustomerOrder();
       }
@@ -201,9 +201,12 @@ public class DSA {
         }
     
     private static void CustomerOrder(){
+        
+       String selection2;
+        int selection;
+        
         System.out.println("=====----- Welcome to CustomerOrder -----=====");
         System.out.println();
-        int selection;
         do{
             System.out.println("Catalog Orders:");
             System.out.println("1 - fresh flowers,");
@@ -212,7 +215,7 @@ public class DSA {
             System.out.println("0 - Return to Main Menu");
             selection = manageSelectionError3();
             flush();
-         switch (selection) {
+        /* switch (selection) {
                 case 1:
                     PickDelivery();
                     System.out.println();
@@ -230,9 +233,17 @@ public class DSA {
                 default:
                     System.out.println("Please choose between 0 to 3.");
                     break;
-            }
-            
-                    
+            }*/
+          System.out.println("Do you still want to order other items?(yes or no)");
+       selection2 = input.nextLine();
+      if(selection2.equals("yes"))
+      {
+          CorporateCustomerOrder();
+      }
+      else
+      {
+          PickDelivery();
+      }             
         } while (selection != 0);
         
     }
@@ -318,8 +329,7 @@ public class DSA {
     
      private static void DisplayCatalogOrder(){
          String ans1;
-         String ans2 = "yes" ;
-        
+   
           System.out.println();
           System.out.println("--------|Catalog Order Menu|--------");
           System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
@@ -337,7 +347,7 @@ public class DSA {
         System.out.println();
         System.out.println("Do you want to make order?(yes or no)");
          ans1 = input.nextLine();
-        if(ans1.equals(ans2))
+        if(ans1.equals("yes"))
         {
             Customer();
         }
