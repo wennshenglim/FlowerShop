@@ -147,21 +147,18 @@ public class DSA {
          System.out.println("=====----- Welcome to CorporateCustomerOrder -----=====");
         System.out.println();
         System.out.println("Your monthly credit left RM2000");
-        System.out.println("Do you want to order with your monthly credit?(yes or no)");
-        selection1 = input.nextLine();
-        if(selection1.equals(selection2))
-        {
+       
             CorporateCustomerOrder();
-        }
-        else
-        {
-            CorporateCustomerOrder();
-         }
+     
+         
+     
         
     }
         private static void CorporateCustomerOrder(){
-       
+       String selection1 = "yes";
+       String selection2;
         int selection;
+        
         do{
             System.out.println("Catalog Orders:");
             System.out.println("1 - fresh flowers,");
@@ -170,7 +167,7 @@ public class DSA {
             System.out.println("0 - Return to Main Menu");
             selection = manageSelectionError3();
             flush();
-         switch (selection) {
+       /*  switch (selection) {
                 case 1:
                     PickDelivery();
                     System.out.println();
@@ -188,10 +185,20 @@ public class DSA {
                 default:
                     System.out.println("Please choose between 0 to 3.");
                     break;
-            }
-         
+            }*/
+       System.out.println("Do you still want to order other items?(yes or no)");
+       selection2 = input.nextLine();
+      if(selection2.equals(selection1))
+      {
+          CorporateCustomerOrder();
+      }
+      else
+      {
+          PickDelivery();
+      }
+       
         } while (selection != 0);    
-    }
+        }
     
     private static void CustomerOrder(){
         System.out.println("=====----- Welcome to CustomerOrder -----=====");
