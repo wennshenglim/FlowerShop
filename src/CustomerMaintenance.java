@@ -130,14 +130,16 @@ public class CustomerMaintenance {
                checkPW = true;
            }
            else{
-               System.out.println("Password entered not same. Please reenter!!");
+                System.out.println("Password entered not same. Please reenter!!");
+                checkPW = false;
            }
         }while(checkPW = false);
-        
+        if(checkPW = true){
         Customers corporateCust = new Customers(username, name, password, email, phoneNo, corporateName, address);
         CorporateCustList.add(corporateCust);
-        System.out.println("\nNew account created successfully!");     
+        System.out.println("\nNew account created successfully!\n");     
         CustomerMaintenanceMenu();
+        }
     }
     
     public static void LoginAcc(){
