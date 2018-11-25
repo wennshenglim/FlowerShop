@@ -26,43 +26,43 @@ public class DSA {
     public static void main(String[] args) {      
  
         Order PastOrder;
-        Date myDate = parseDate("2018-11-12");
-        PastOrder = new Order("P001","dasdasd",myDate,"14：30","Unpick");
+        Date myDate = parseDate("2018-11-25");
+        PastOrder = new Order("P001","dasdasd",myDate,"14：30","20.00","Unpick");
         OrderList.add(PastOrder);
-        PastOrder = new Order("P002","dasdasd",myDate,"15：30","Unpick");
+        PastOrder = new Order("P002","dasdasd",myDate,"15：30","20.00","Unpick");
         OrderList.add(PastOrder);
-        PastOrder = new Order("P003","dasdasd",myDate,"16：30","Unpick");
+        PastOrder = new Order("P003","dasdasd",myDate,"16：30","20.00","Unpick");
         OrderList.add(PastOrder);
-        Date myDate1 = parseDate("2018-11-13");
-        PastOrder = new Order("P004","dasdasd",myDate1,"15：30","Unpick");
+        Date myDate1 = parseDate("2018-11-26");
+        PastOrder = new Order("P004","dasdasd",myDate1,"15：30","20.00","Unpick");
         OrderList.add(PastOrder);
-        PastOrder = new Order("P005","dasdasd",myDate1,"16：30","Unpick");
+        PastOrder = new Order("P005","dasdasd",myDate1,"16：30","20.00","Unpick");
         OrderList.add(PastOrder);
-        PastOrder = new Order("P006","dasdasd",myDate1,"17：30","Unpick");
+        PastOrder = new Order("P006","dasdasd",myDate1,"17：30","20.00","Unpick");
         OrderList.add(PastOrder);
-        PastOrder = new Order("P007","dasdasd",myDate1,"18：30","Unpick");
+        PastOrder = new Order("P007","dasdasd",myDate1,"18：30","20.00","Unpick");
         OrderList.add(PastOrder);
-        Date myDate2 = parseDate("2018-11-14");
-        PastOrder = new Order("P008","dasdasd",myDate2,"11：30","Unpick");
+        Date myDate2 = parseDate("2018-11-27");
+        PastOrder = new Order("P008","dasdasd",myDate2,"11：30","20.00","Unpick");
         OrderList.add(PastOrder);
-        PastOrder = new Order("P009","dasdasd",myDate2,"12：30","Unpick");
+        PastOrder = new Order("P009","dasdasd",myDate2,"12：30","20.00","Unpick");
         OrderList.add(PastOrder);
         
-        PastOrder = new Order("D001","dasdasd",myDate,"15：30","Undelivered");
+        PastOrder = new Order("D001","dasdasd",myDate,"15：30","20.00","Undelivered");
         DeliveryList.add(PastOrder);
-        PastOrder = new Order("D002","dasdasd",myDate,"16：30","Undelivered");
+        PastOrder = new Order("D002","dasdasd",myDate,"16：30","20.00","Undelivered");
         DeliveryList.add(PastOrder);
-        PastOrder = new Order("D003","dasdasd",myDate,"17：30","Undelivered");
+        PastOrder = new Order("D003","dasdasd",myDate,"17：30","20.00","Undelivered");
         DeliveryList.add(PastOrder);
-        PastOrder = new Order("D004","dasdasd",myDate,"18：30","Undelivered");
+        PastOrder = new Order("D004","dasdasd",myDate,"18：30","20.00","Undelivered");
         DeliveryList.add(PastOrder);
-        PastOrder = new Order("D005","dasdasd",myDate1,"15：30","Undelivered");
+        PastOrder = new Order("D005","dasdasd",myDate1,"15：30","20.00","Undelivered");
         DeliveryList.add(PastOrder);
-        PastOrder = new Order("D006","dasdasd",myDate1,"16：30","Undelivered");
+        PastOrder = new Order("D006","dasdasd",myDate1,"16：30","20.00","Undelivered");
         DeliveryList.add(PastOrder);
-        PastOrder = new Order("D007","dasdasd",myDate1,"17：30","Undelivered");
+        PastOrder = new Order("D007","dasdasd",myDate1,"17：30","20.00","Undelivered");
         DeliveryList.add(PastOrder);
-        PastOrder = new Order("D008","dasdasd",myDate1,"18：30","Undelivered");
+        PastOrder = new Order("D008","dasdasd",myDate1,"18：30","20.00","Undelivered");
         DeliveryList.add(PastOrder);
         
         FlowerShopMenu();
@@ -155,7 +155,7 @@ public class DSA {
     }
 
     private static void OrderDelivery() {
-       System.out.println("=====----- Welcome to Order Delivery Menu -----=====");
+        System.out.println("=====----- Welcome to Order Delivery Menu -----=====");
         System.out.println();
         int selection;
         do {
@@ -179,7 +179,129 @@ public class DSA {
     }
 
     private static void CustomerPayment() {
+        System.out.println("=====----- Welcome to Payment Menu -----=====");
+        System.out.println();
+        int selection;
+        do {
+            System.out.println("Payment Menu:");
+            System.out.println("1 - Payment for Pickup");
+            System.out.println("2 - Payment for Delivery");
+            System.out.println("0 - Return to Main Menu");
+            selection = manageSelectionError();
+            flush();
+            switch (selection) {
+                case 1:
+                    PaymentPickUp();
+                    System.out.println();
+                    break;
+                case 2:
+                    PaymentDelivery();
+                    System.out.println();
+                    break;
+                case 0:
+                    break;
+                default:
+                    System.out.println("Please choose between 0 to 2.");
+                    break;
+            }
+        } while (selection != 0); 
+    }
+    
+    private static void PaymentPickUp() {
+        System.out.println("=====----- Welcome to Pick-up Payment Menu -----=====");
+        System.out.println();
+        int selection;
+        do {
+            System.out.println("Payment Menu:");
+            System.out.println("1 - Payment for Individual Customer");
+            System.out.println("2 - Payment for Corporate Customer");
+            System.out.println("0 - Return to Main Menu");
+            selection = manageSelectionError();
+            flush();
+            switch (selection) {
+                case 1:
+                    PaymentIC();
+                    System.out.println();
+                    break;
+                case 2:
+                    PaymentCC();
+                    System.out.println();
+                    break;
+                case 0:
+                    break;
+                default:
+                    System.out.println("Please choose between 0 to 2.");
+                    break;
+            }
+        } while (selection != 0); 
+    }
+    
+    private static void PaymentIC() {
         
+        String s;
+        List p = getOrderByDate(lDate);       
+        System.out.println();
+        System.out.println("=====----- Pick-up Payment for Individual Customer -----=====");
+        System.out.println();
+        System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
+        System.out.println("\tOrder ID\tDetails\t\tCollect Time\tAmount To Paid\t\tOrder Status");
+        System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
+        if (p.isEmpty()) {
+            System.out.println("@@@@@@@@@@@        No record        @@@@@@@@@@@");
+        } else {
+            for(int i = 0;i < p.size();i++){
+                System.out.println(i+1 + "\t" + p.get(i));
+            }
+        }
+        System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
+        System.out.println();
+        System.out.println("Select one of the Order to proceed payment");
+        System.out.println("------------------------------------------------------------------------------------------------------------------");
+        int selection;
+        do {
+            selection = manageSelectionError();
+            flush();
+            switch (selection) {
+                case 1:
+                    s = ((Order)p.get(selection - 1)).getOrderid();
+                    Payment(s);
+                    System.out.println();
+                    break;
+                case 2:
+                    s = ((Order)p.get(selection - 1)).getOrderid();
+                    Payment(s);
+                    System.out.println();
+                    break;  
+                case 3:
+                    s = ((Order)p.get(selection - 1)).getOrderid();
+                    Payment(s);
+                    System.out.println();
+                    break;  
+                case 4:
+                    s = ((Order)p.get(selection - 1)).getOrderid();
+                    Payment(s);
+                    System.out.println();
+                    break;  
+                case 5:
+                    s = ((Order)p.get(selection - 1)).getOrderid();
+                    Payment(s);
+                    System.out.println();
+                    break;  
+                case 0:
+                    break;
+                default:
+                    System.out.println("Please select one of the order.");
+                    break;
+            }
+        } while (selection != 0); 
+    }
+
+    private static void PaymentCC() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private static void PaymentDelivery() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     private static void ViewOrderDelivery() {
@@ -238,6 +360,40 @@ public class DSA {
             
         }
         return OrderList;
+    }
+    public static void Payment(String s){
+        String p = s;
+        Order o = getOrderAmountById(p);
+        String a = "";
+        
+        System.out.println();
+        System.out.println("-------------------------|Order that selected|-------------------------");
+        System.out.println("-----------------------------------------------------------------------");
+        System.out.println("Order ID : " + o.getOrderid());
+        System.out.println("Order Description : " + o.getOrderDesc());
+        System.out.println("Order Date : " + o.getOrderDate());
+        System.out.println("Order Time : " + o.getOrderTime());
+        System.out.println("-----------------------------------------------------------------------");
+        System.out.println("Payment");
+        System.out.println("-----------------------------------------------------------------------");
+        System.out.println("Total Amount : RM " + o.getAmount()); 
+        System.out.print("Enter the Amount : RM ");
+        a = input.next();
+ 
+    }
+    
+    public static Order getOrderAmountById(String s){  
+        Order o = null;
+        
+        for(int i = 0;i < OrderList.size();i++){
+            String Orderid = ((Order)OrderList.get(i)).getOrderid();
+            if(s.equals(Orderid)){
+                o = OrderList.get(i);
+            }
+            else{
+            }
+        }
+        return o;
     }
     
     public static List getOrderByDate(String lDate){
