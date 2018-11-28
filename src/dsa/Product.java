@@ -9,23 +9,48 @@ package dsa;
  *
  * @author LIM
  */
+
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class Product {
     private String ProductID;
     private String ProductName;
     private String ProductDesc;
-    private double ProductPrice;
-    private int ProductQuantity;
+    private String ProductPrice;
+    private String ProductQuantity;
     private String ProductType;
+    
+    
+    private static int nextID=1;
 
-    public Product(String ProductID, String ProductName,String ProductType, String ProductDesc, double ProductPrice, int ProductQuantity) {
-        this.ProductID = ProductID;
+
+//    public Product(String ProductID, String ProductName,String ProductType, String ProductDesc, String ProductPrice, String ProductQuantity) {
+//        this.ProductID = ProductID;
+//        this.ProductName = ProductName;
+//        this.ProductDesc = ProductDesc;
+//        this.ProductPrice = ProductPrice;
+//        this.ProductQuantity = ProductQuantity;
+//        this.ProductType = ProductType;
+//    }
+
+        public Product(String ProductName, String ProductType,String ProductDesc, String ProductPrice, String ProductQuantity) {
         this.ProductName = ProductName;
         this.ProductDesc = ProductDesc;
         this.ProductPrice = ProductPrice;
         this.ProductQuantity = ProductQuantity;
         this.ProductType = ProductType;
+        this.ProductID="P" + String.format ("%04d",nextID);
+        generateID();
     }
    
+    
+    public void generateID()
+    {
+         nextID ++;
+    }
+    
+
+    
 //    public Product(String ProductID) {
 //        this.ProductID = ProductID;
 //    }
@@ -54,19 +79,19 @@ public class Product {
         this.ProductDesc = ProductDesc;
     }
 
-    public double getProductPrice() {
+    public String getProductPrice() {
         return ProductPrice;
     }
 
-    public void setProductPrice(double ProductPrice) {
+    public void setProductPrice(String ProductPrice) {
         this.ProductPrice = ProductPrice;
     }
 
-    public int getProductQuantity() {
+    public String getProductQuantity() {
         return ProductQuantity;
     }
 
-    public void setProductQuantity(int ProductQuantity) {
+    public void setProductQuantity(String ProductQuantity) {
         this.ProductQuantity = ProductQuantity;
     }
 
@@ -84,6 +109,10 @@ public class Product {
     @Override
     public String toString() {
         return ProductID + "\t\t" + ProductName + "\t\t" + ProductType +"\t\t\t"+ ProductDesc + "\t\t\t" + ProductPrice + "\t\t\t" + ProductQuantity + "\t\t\t";
+    }
+
+     public String toStringID() {
+        return ProductID;
     }
     
     
