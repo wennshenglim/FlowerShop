@@ -15,9 +15,9 @@ public class Order {
     private String OrderTime;
     private String status;
 
-    public Order(String Orderid, String OrderDesc, Date OrderDate, String OrderTime, String status) {
+    public Order(String Orderid, String Cart, Date OrderDate, String OrderTime, String status) {
         this.Orderid = Orderid;
-        this.OrderDesc = OrderDesc;
+        this.OrderDesc = Cart;
         this.OrderDate = OrderDate;
         this.OrderTime = OrderTime;
         this.status = status;
@@ -68,7 +68,7 @@ public class Order {
     }
 
     @Override
-    public String toString() {
+    public java.lang.String toString() {
         return Orderid + "\t\t" + OrderDesc + "\t\t" + OrderTime + "\t\t" + status;
     }
 
