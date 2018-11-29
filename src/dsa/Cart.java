@@ -79,12 +79,19 @@ public class Cart {
     public java.lang.String toString() {
        // System.out.println(cartID);
       //  System.out.print("Item : ");
+      String value ="";
+    //  String quantity = "";
+
        for (int i = 0; i < itemCount; i++) {
-         System.out.print(cart[i]+", ");
-            
+      //   System.out.print(cart[i]+", ");
+          value += cart[i].getName()+"\t\t\t"+cart[i].getQuantity()+"\n\t\t";
+       //   quantity +=cart[i].getQuantity();
+         // value +="\n\t\t" ;
+        //quantity +="\t";
+         
         }
       //  System.out.println();
-        return String.format( cartID + "\t" + cart);
+        return  cartID + "\t\t" + value ;
        
     }
 

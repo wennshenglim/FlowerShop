@@ -37,7 +37,7 @@ public class Item {
 
     @Override
     public String toString() {
-        return "Item{" + "name=" + name + ", quantity=" + quantity + '}';
+        return "\t" +name+"\t\t"+quantity+"\n\t\t";
     }
     
     

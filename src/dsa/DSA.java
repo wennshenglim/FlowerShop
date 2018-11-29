@@ -210,9 +210,9 @@ public class DSA {
         int quantity = 0;
         do{
             System.out.println("Catalog Orders:");
-            System.out.println("1 - fresh flowers,");
-            System.out.println("2 - bouquets,");
-            System.out.println("3 - floral arrangements,");
+            System.out.println("1 - fresh flowers");
+            System.out.println("2 - bouquets");
+            System.out.println("3 - floral arrangements");
             System.out.println("0 - Return to Main Menu");
                boolean valid = false;
         do {
@@ -232,9 +232,9 @@ public class DSA {
        quantity = input.nextInt();
        
      if(selection==1)
-        cart.addToCart("fresh flower",quantity);
+        cart.addToCart("fresh flower\t",quantity);
      else if(selection==2)
-         cart.addToCart("bouquets", quantity);
+         cart.addToCart("bouquets\t", quantity);
      else if(selection==3)
          cart.addToCart("floral arrangements", quantity);
      
@@ -263,8 +263,8 @@ public class DSA {
         int quantity = 0;
         do{
             System.out.println("Catalog Orders:");
-            System.out.println("1 - fresh flowers,");
-            System.out.println("2 - bouquets,");
+            System.out.println("1 - fresh flowers");
+            System.out.println("2 - bouquets");
             System.out.println("3 - floral arrangements,");
             System.out.println("0 - Return to Main Menu");
                boolean valid = false;
@@ -285,9 +285,9 @@ public class DSA {
        quantity = input.nextInt();
        
      if(selection==1)
-        cart.addToCart("fresh flower",quantity);
+        cart.addToCart("fresh flower\t",quantity);
      else if(selection==2)
-         cart.addToCart("bouquets", quantity);
+         cart.addToCart("bouquets\t", quantity);
      else if(selection==3)
          cart.addToCart("floral arrangements", quantity);
      
@@ -378,7 +378,7 @@ public class DSA {
         System.out.println();
         System.out.println("=====----- Welcome to Sales Order Menu -----=====");
         System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
-        System.out.println("Cart ID\t\tOrder Item\tQuantity");
+        System.out.println("Cart ID\t\tOrder Item\t\t\t     Quantity");
         System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
         if(cartList.isEmpty()){
             System.out.println("Sorry , there is no such record");
