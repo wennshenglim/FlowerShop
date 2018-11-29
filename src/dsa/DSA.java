@@ -26,6 +26,7 @@ public class DSA {
     
     public static void main(String[] args) {      
  
+        /*Testing*/
         Order PastOrder;
         Date myDate = parseDate("2018-11-29");
         PastOrder = new Order("P001","dasdasd",myDate,"14:30","20.00","      -       ","      -       ","Unpick");
