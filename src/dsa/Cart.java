@@ -10,7 +10,8 @@ package dsa;
  * @author kky
  */
 public class Cart {
-
+    private String CustomerID = "CU00001";
+    private int price;
     private String cartID = "C00001";
     private int itemCount;
     private Item[] cart;

@@ -17,6 +17,7 @@ import java.util.Scanner;
 public class DSA {
 
     static Scanner input = new Scanner(System.in);
+    static List<CorporateCustomer> CSList = new ArrayList<CorporateCustomer>();
     static List<CatalogOrder> coList = new ArrayList<CatalogOrder>();
     static List<Order> custList = new ArrayList<Order>();
     static List<Order> OrderList = new ArrayList<Order>();
@@ -32,6 +33,10 @@ public class DSA {
         
         Cart cart=new Cart();
     
+        CorporateCustomer cs;
+        cs = new CorporateCustomer("CS0001", 2000);
+        CSList.add(cs);
+        
         CatalogOrder catalog;
         catalog = new CatalogOrder("F0001", "asssss","redrose","RM10.00");
         coList.add(catalog);
@@ -195,12 +200,23 @@ public class DSA {
       
          System.out.println("=====----- Welcome to CorporateCustomerOrder -----=====");
         System.out.println();
-        System.out.println("Your monthly credit left RM2000");
+        System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
+       
+        if(CSList.isEmpty()){
+            System.out.println("Sorry , there is no credit limit left");
+        }
+        else{
+             for(int i = 0;i < CSList.size();i++){
+                  System.out.println("Credit Limit Left:" + CSList.get(i));
+                 //System.out.println(CSList.get(i));    
+          System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
+          
+            }
+         
        
             CorporateCustomerOrder(cart);
-     
-         
-     
+        }
+       
         
     }
         private static void CorporateCustomerOrder(Cart cart)
