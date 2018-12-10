@@ -12,21 +12,31 @@ public class Order {
     private String Orderid;
     private String OrderDesc;
     private Date OrderDate;
+    private String Address;
     private String OrderTime;
     private String Amount;
     private String pDate;
     private String time;
     private String status;
 
-    public Order(String Orderid, String OrderDesc, Date OrderDate, String OrderTime, String Amount, String pDate, String time, String status) {
+    public Order(String Orderid, String OrderDesc, Date OrderDate, String OrderTime, String Amount, String Address, String pDate, String time, String status) {
         this.Orderid = Orderid;
         this.OrderDesc = OrderDesc;
         this.OrderDate = OrderDate;
         this.OrderTime = OrderTime;
+        this.Address = Address;
         this.Amount = Amount;
         this.pDate = pDate;
         this.time = time;
         this.status = status;
+    }
+
+    public String getAddress() {
+        return Address;
+    }
+
+    public void setAddress(String Address) {
+        this.Address = Address;
     }
 
     public Order() {
@@ -84,7 +94,6 @@ public class Order {
         this.Amount = Amount;
     }
     
-    
     public void setPDate(String pDate) {
         this.pDate = pDate;
     }
@@ -99,11 +108,6 @@ public class Order {
  
     @Override
     public String toString() {
-        return Orderid + "\t\t" + OrderDesc + "\t\t" + OrderTime + "\t\t" + "RM " + Amount + "\t\t" + pDate + "\t\t" + time + "\t\t" + status;
+        return Orderid + "\t\t" + OrderDesc + "\t\t" + OrderTime + "\t\t" + "RM " + Amount + "\t\t" + Address + "\t\t" + pDate + "\t\t" + time + "\t\t" + status;
     }
-    
-    public String toStringPD(){
-        return Orderid + "\t\t" + OrderDesc + "\t\t" + OrderTime + "\t\t" + status;
-    }
-
 }
