@@ -109,6 +109,7 @@ public class DSA {
             System.out.println("1 - Order Pickup");
             System.out.println("2 - Order Delivery");
             System.out.println("3 - Customer Payment");
+            System.out.println("4 - View All Order");
             System.out.println("0 - Return to Main Menu");
             selection = manageSelectionError();
             flush();
@@ -132,7 +133,7 @@ public class DSA {
                 case 0:
                     break;
                 default:
-                    System.out.println("Please choose between 0 to 3.");
+                    System.out.println("Please choose between 0 to 4.");
                     break;
             }
         } while (selection != 0);
@@ -254,7 +255,7 @@ public class DSA {
         int selection;
         do {
             System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
-            System.out.println("\tOrder ID\tDetails\t\tCollect Time\tAmount To Paid\t\tDate Picked Up\t\tTime Picked Up\t\tOrder Status");
+            System.out.println("\tOrder ID\tDetails\t\tCollect Time\tAmount To Paid\t\t   Address\t\tDate Picked Up\t\tTime Picked Up\t\tOrder Status");
             System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
                 if (p.isEmpty()) {
                     System.out.println("\t\t\t@@@@@@@@@@@                                       No record                                       @@@@@@@@@@@");
@@ -342,7 +343,7 @@ public class DSA {
         int selection;
         do {
             System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
-            System.out.println("\tOrder ID\tDetails\t\tCollect Time\tAmount To Paid\t\tDate Picked Up\t\tTime Picked Up\t\tOrder Status");
+            System.out.println("\tOrder ID\tDetails\t\tCollect Time\tAmount To Paid\t\t   Address\t\tDate Picked Up\t\tTime Picked Up\t\tOrder Status");
             System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
                 if (p.isEmpty()) {
                     System.out.println("\t\t\t@@@@@@@@@@@                                       No record                                       @@@@@@@@@@@");
@@ -446,7 +447,7 @@ public class DSA {
         System.out.println();
         System.out.println("--------|All Order that ready for pick up|--------");
         System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
-        System.out.println("Order ID\tDetails\t\tCollect Time\tAmount To Paid\t\tDate Picked Up\t\tTime Picked Up\t\tOrder Status");
+        System.out.println("Order ID\tDetails\t\tCollect Time\tAmount To Paid\t\t   Address\t\tDate Picked Up\t\tTime Picked Up\t\tOrder Status");
         System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
         if (p.isEmpty()) {
             System.out.println("@@@@@@@@@@@                                       No record                                       @@@@@@@@@@@");
